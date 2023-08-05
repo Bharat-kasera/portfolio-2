@@ -159,3 +159,25 @@ addEventOnElements(hoveredElements, "mouseout", function () {
     cursors[i].classList.remove("hovered");
   }
 });
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  
+  const form = e.target;
+  const formData = new FormData(form);
+  const emailParams = {
+    from_name: formData.get('name'),
+    email: formData.get('email_address'),
+    phone: formData.get('phone'),
+    message: formData.get('message'),
+  };
+
+  try {
+    await sendEmail(form, emailParams);
+    alert('Your response has been received!');
+    form.reset(); // Clear the form after successful submission
+  } catch (error) {
+    alert('There was an error. Please try again in a while.');
+  }
+};

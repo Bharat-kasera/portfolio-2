@@ -149,6 +149,7 @@ address { font-style: normal; }
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -352,6 +353,10 @@ body.nav-active { overflow: hidden; }
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
+
+.logo img{
+  /* max-width: 200px; */
+}
 
 .header .btn { display: none; }
 
